@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { StatusBar, StyleSheet, View } from 'react-native';
-import Home from './src/Home';
+import Home from './src/views/Home';
 
 export default function App() {
   return (
