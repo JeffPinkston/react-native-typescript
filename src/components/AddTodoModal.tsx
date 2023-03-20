@@ -4,24 +4,24 @@ import { Modal, View, Pressable, Text, TextInput } from "react-native";
 import { Todo } from "../models";
 import homePageStyles from "../styles/styles";
 
-type AddToEvent = {
+type AddTodo = {
     modalVisible: boolean,
     setModalVisible: (value: boolean) => void
 }
 
-const AddTodoModel = (e: AddToEvent) => {
+const AddTodoModel = (props: AddTodo) => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
 
     async function addTodo() {
         await DataStore.save(new Todo({ name, description, isComplete: false }));
-        e.setModalVisible(false);
+        props.setModalVisible(false);
         setName('');
         setDescription('');
     }
 
     function closeModal() {
-        e.setModalVisible(false);
+        props.setModalVisible(false);
     }
 
     return (
@@ -29,7 +29,7 @@ const AddTodoModel = (e: AddToEvent) => {
             animationType="fade"
             onRequestClose={closeModal}
             transparent
-            visible={e.modalVisible}
+            visible={props.modalVisible}
         >
             <View style={homePageStyles.modalContainer}>
                 <View style={homePageStyles.modalInnerContainer}>
