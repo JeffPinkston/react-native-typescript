@@ -1,9 +1,16 @@
 import { Platform, StyleSheet } from "react-native";
 
-const homePageStyles = StyleSheet.create({
+export const globalAppStyles = StyleSheet.create({
+    container: {
+        backgroundColor: '#fff',
+        flex: 1,
+    },
+});
+
+export const homePageStyles = StyleSheet.create({
     headerContainer: {
         backgroundColor: '#4696ec',
-        paddingTop: Platform.OS === 'ios' ? 44 : 0,
+        paddingTop: Platform.OS === 'ios' ? 36 : 0,
     },
     headerTitle: {
         color: '#fff',
@@ -92,5 +99,3 @@ const homePageStyles = StyleSheet.create({
         fontWeight: '700',
     },
 });
-
-export default homePageStyles;

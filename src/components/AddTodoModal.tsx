@@ -2,12 +2,8 @@ import { DataStore } from "aws-amplify";
 import { useState } from "react";
 import { Modal, View, Pressable, Text, TextInput } from "react-native";
 import { Todo } from "../models";
-import homePageStyles from "../styles/styles";
-
-type AddTodo = {
-    modalVisible: boolean,
-    setModalVisible: (value: boolean) => void
-}
+import { homePageStyles } from "../styles/styles";
+import { AddTodo } from "../types/types";
 
 const AddTodoModel = (props: AddTodo) => {
     const [name, setName] = useState('');

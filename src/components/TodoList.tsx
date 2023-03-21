@@ -2,11 +2,8 @@ import { DataStore } from "aws-amplify";
 import { useState, useEffect } from "react";
 import { Pressable, Text, FlatList } from "react-native";
 import { Todo } from "../models";
-import homePageStyles from "../styles/styles";
-
-type TodoItem = {
-    item: Todo,
-}
+import { homePageStyles } from "../styles/styles";
+import { TodoItem } from "../types/types";
 
 const TodoList = () => {
     const [todos, setTodos] = useState<Todo[]>([]);

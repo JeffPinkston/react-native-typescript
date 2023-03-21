@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import '@azure/core-asynciterator-polyfill';
 import {
+    Button,
     Pressable,
+    StatusBar,
     Text,
 } from 'react-native';
-import homePageStyles from '../styles/styles';
-import Header from '../components/Header';
+import { homePageStyles } from '../styles/styles';
 import TodoList from '../components/TodoList';
 import AddTodoModel from '../components/AddTodoModal';
 
@@ -14,7 +15,7 @@ const Home = () => {
 
     return (
         <>
-            <Header />
+            <StatusBar />
             <TodoList />
             <Pressable
                 onPress={() => setModalVisible(true)}
@@ -22,6 +23,7 @@ const Home = () => {
             >
                 <Text style={homePageStyles.buttonText}>Add Todo</Text>
             </Pressable>
+
             <AddTodoModel
                 modalVisible={modalVisible}
                 setModalVisible={setModalVisible}
