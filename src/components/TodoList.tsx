@@ -2,7 +2,7 @@ import { DataStore } from "aws-amplify";
 import { useState, useEffect } from "react";
 import { Pressable, Text, FlatList } from "react-native";
 import { Todo } from "../models";
-import { homePageStyles } from "../styles/styles";
+import { homePageStyles, todoListStyles } from "../styles/styles";
 import { TodoItem } from "../types/types";
 
 const TodoList = () => {
@@ -40,9 +40,9 @@ const TodoList = () => {
         <Pressable
             onLongPress={() => deleteTodo(todo.item)}
             onPress={() => setComplete(!todo.item.isComplete, todo.item)}
-            style={homePageStyles.todoContainer}>
+            style={todoListStyles.todoContainer}>
             <Text>
-                <Text style={homePageStyles.todoHeading}>{todo.item.name}</Text>
+                <Text style={todoListStyles.todoHeading}>{todo.item.name}</Text>
                 {`\n${todo.item.description}`}
             </Text>
             <Text style={[homePageStyles.checkbox, todo.item.isComplete && homePageStyles.completedCheckbox]}>

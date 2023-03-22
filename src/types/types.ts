@@ -12,8 +12,12 @@ export type TodoItem = {
 
 export type RootStackParamList = {
     Home: undefined;
-    Details: undefined;
+    Details: { title: string };
 }
 
-export type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+export type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+export type HomeScreenNavigationProp = HomeScreenProps['navigation'];
+
+export type HomeScreenRouteProp = HomeScreenProps['route'];
 

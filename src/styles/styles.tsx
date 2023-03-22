@@ -7,7 +7,7 @@ export const globalAppStyles = StyleSheet.create({
     },
 });
 
-export const homePageStyles = StyleSheet.create({
+export const headerStyles = StyleSheet.create({
     headerContainer: {
         backgroundColor: '#4696ec',
         paddingTop: Platform.OS === 'ios' ? 36 : 0,
@@ -19,6 +19,9 @@ export const homePageStyles = StyleSheet.create({
         paddingVertical: 16,
         textAlign: 'center',
     },
+});
+
+export const todoListStyles = StyleSheet.create({
     todoContainer: {
         alignItems: 'center',
         backgroundColor: '#fff',
@@ -39,6 +42,9 @@ export const homePageStyles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '600',
     },
+});
+
+export const homePageStyles = StyleSheet.create({
     checkbox: {
         borderRadius: 2,
         borderWidth: 2,
@@ -51,17 +57,6 @@ export const homePageStyles = StyleSheet.create({
     completedCheckbox: {
         backgroundColor: '#000',
         color: '#fff',
-    },
-    buttonText: {
-        color: '#fff',
-        fontWeight: '600',
-        padding: 16,
-    },
-    buttonContainer: {
-        alignSelf: 'center',
-        backgroundColor: '#4696ec',
-        borderRadius: 99,
-        paddingHorizontal: 8,
     },
     floatingButton: {
         position: 'absolute',
@@ -77,6 +72,23 @@ export const homePageStyles = StyleSheet.create({
     floatingDetailsButton: {
         bottom: 22,
     },
+});
+
+export const buttonStyles = StyleSheet.create({
+    buttonText: {
+        color: '#fff',
+        fontWeight: '600',
+        padding: 16,
+    },
+    buttonContainer: {
+        alignSelf: 'center',
+        backgroundColor: '#4696ec',
+        borderRadius: 99,
+        paddingHorizontal: 8,
+    },
+});
+
+export const addTodoModalStyles = StyleSheet.create({
     modalContainer: {
         backgroundColor: 'rgba(0,0,0,0.5)',
         flex: 1,
@@ -101,4 +113,9 @@ export const homePageStyles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '700',
     },
+});
+
+
+export const detailsPageStyles = StyleSheet.create({
+
 });

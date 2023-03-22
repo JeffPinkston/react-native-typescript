@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import '@azure/core-asynciterator-polyfill';
 import {
-    Button,
     Pressable,
     StatusBar,
     Text,
 } from 'react-native';
-import { homePageStyles } from '../styles/styles';
+import { buttonStyles, homePageStyles } from '../styles/styles';
 import TodoList from '../components/TodoList';
 import AddTodoModal from '../components/AddTodoModal';
-import { Props } from '../types/types';
+import { HomeScreenNavigationProp } from '../types/types';
+import { useNavigation } from '@react-navigation/native';
 
-const Home = ({ navigation }: Props) => {
+const Home = () => {
     const [modalVisible, setModalVisible] = useState(false);
+    const navigation = useNavigation<HomeScreenNavigationProp>();
 
     return (
         <>
@@ -20,14 +21,14 @@ const Home = ({ navigation }: Props) => {
             <TodoList />
             <Pressable
                 onPress={() => setModalVisible(true)}
-                style={[homePageStyles.buttonContainer, homePageStyles.floatingButton]}
+                style={[buttonStyles.buttonContainer, homePageStyles.floatingButton]}
             >
-                <Text style={homePageStyles.buttonText}>Add Todo</Text>
+                <Text style={buttonStyles.buttonText}>Add Todo</Text>
             </Pressable>
             <Pressable
-                onPress={() => navigation.navigate('Details')}
-                style={[homePageStyles.buttonContainer, homePageStyles.floatingButton, homePageStyles.floatingDetailsButton]}>
-                <Text style={homePageStyles.buttonText}>Go to Details</Text>
+                onPress={() => navigation.navigate('Details', { title: 'Details Screen' })}
+                style={[buttonStyles.buttonContainer, homePageStyles.floatingButton, homePageStyles.floatingDetailsButton]}>
+                <Text style={buttonStyles.buttonText}>Go to Details</Text>
             </Pressable>
             <AddTodoModal
                 modalVisible={modalVisible}

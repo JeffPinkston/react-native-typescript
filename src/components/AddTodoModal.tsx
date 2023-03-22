@@ -2,7 +2,7 @@ import { DataStore } from "aws-amplify";
 import { useState } from "react";
 import { Modal, View, Pressable, Text, TextInput } from "react-native";
 import { Todo } from "../models";
-import { homePageStyles } from "../styles/styles";
+import { addTodoModalStyles, buttonStyles, homePageStyles } from "../styles/styles";
 import { AddTodo } from "../types/types";
 import 'react-native-gesture-handler';
 
@@ -28,23 +28,23 @@ const AddTodoModal = (props: AddTodo) => {
             transparent
             visible={props.modalVisible}
         >
-            <View style={homePageStyles.modalContainer}>
-                <View style={homePageStyles.modalInnerContainer}>
-                    <Pressable onPress={closeModal} style={homePageStyles.modalDismissButton}>
-                        <Text style={homePageStyles.modalDismissText}>X</Text>
+            <View style={addTodoModalStyles.modalContainer}>
+                <View style={addTodoModalStyles.modalInnerContainer}>
+                    <Pressable onPress={closeModal} style={addTodoModalStyles.modalDismissButton}>
+                        <Text style={addTodoModalStyles.modalDismissText}>X</Text>
                     </Pressable>
                     <TextInput
                         onChangeText={setName}
                         placeholder="Name"
-                        style={homePageStyles.modalInput}
+                        style={addTodoModalStyles.modalInput}
                     />
                     <TextInput
                         onChangeText={setDescription}
                         placeholder="Description"
-                        style={homePageStyles.modalInput}
+                        style={addTodoModalStyles.modalInput}
                     />
-                    <Pressable onPress={addTodo} style={homePageStyles.buttonContainer}>
-                        <Text style={homePageStyles.buttonText}>Add Todo</Text>
+                    <Pressable onPress={addTodo} style={buttonStyles.buttonContainer}>
+                        <Text style={buttonStyles.buttonText}>Add Todo</Text>
                     </Pressable>
                 </View>
             </View>
