@@ -8,9 +8,10 @@ import {
 } from 'react-native';
 import { homePageStyles } from '../styles/styles';
 import TodoList from '../components/TodoList';
-import AddTodoModel from '../components/AddTodoModal';
+import AddTodoModal from '../components/AddTodoModal';
+import { Props } from '../types/types';
 
-const Home = () => {
+const Home = ({ navigation }: Props) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
@@ -23,8 +24,12 @@ const Home = () => {
             >
                 <Text style={homePageStyles.buttonText}>Add Todo</Text>
             </Pressable>
-
-            <AddTodoModel
+            <Pressable
+                onPress={() => navigation.navigate('Details')}
+                style={[homePageStyles.buttonContainer, homePageStyles.floatingButton, homePageStyles.floatingDetailsButton]}>
+                <Text style={homePageStyles.buttonText}>Go to Details</Text>
+            </Pressable>
+            <AddTodoModal
                 modalVisible={modalVisible}
                 setModalVisible={setModalVisible}
             />

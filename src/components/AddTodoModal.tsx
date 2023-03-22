@@ -4,8 +4,9 @@ import { Modal, View, Pressable, Text, TextInput } from "react-native";
 import { Todo } from "../models";
 import { homePageStyles } from "../styles/styles";
 import { AddTodo } from "../types/types";
+import 'react-native-gesture-handler';
 
-const AddTodoModel = (props: AddTodo) => {
+const AddTodoModal = (props: AddTodo) => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
 
@@ -51,4 +52,4 @@ const AddTodoModel = (props: AddTodo) => {
     );
 };
 
-export default AddTodoModel;
+export default AddTodoModal;

@@ -65,7 +65,7 @@ export const homePageStyles = StyleSheet.create({
     },
     floatingButton: {
         position: 'absolute',
-        bottom: 44,
+        bottom: 88,
         elevation: 6,
         shadowOffset: {
             height: 4,
@@ -73,6 +73,9 @@ export const homePageStyles = StyleSheet.create({
         },
         shadowOpacity: 0.3,
         shadowRadius: 4,
+    },
+    floatingDetailsButton: {
+        bottom: 22,
     },
     modalContainer: {
         backgroundColor: 'rgba(0,0,0,0.5)',

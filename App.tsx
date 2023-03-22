@@ -8,19 +8,14 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack';
 import Home from './src/screens/Home';
 import Details from './src/screens/Details';
 import { globalAppStyles } from './src/styles/styles';
+import { createStackNavigator } from '@react-navigation/stack';
+import { RootStackParamList } from './src/types/types';
+import 'react-native-gesture-handler';
 
-type RootStackParamList = {
-  Home: undefined;
-  Details: undefined;
-}
-
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
-
-const RootStack = createNativeStackNavigator<RootStackParamList>();
+const RootStack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
